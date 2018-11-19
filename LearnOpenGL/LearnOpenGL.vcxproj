@@ -76,10 +76,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\CPP_workspace\OpenGL_Asset\glfw-3.2.1.bin.WIN32\include;D:\CPP_workspace\OpenGL_Asset\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\OpenGL\glfw-3.2.1.bin.WIN32\include;D:\OpenGL\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\CPP_workspace\OpenGL_Asset\glfw-3.2.1.bin.WIN32\lib-vc2015;D:\CPP_workspace\OpenGL_Asset\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\OpenGL\glfw-3.2.1.bin.WIN32\lib-vc2015;D:\OpenGL\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -89,10 +89,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\CPP_workspace\OpenGL_Asset\glfw-3.2.1.bin.WIN32\include;D:\CPP_workspace\OpenGL_Asset\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\OpenGL\glfw-3.2.1.bin.WIN32\include;D:\OpenGL\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\CPP_workspace\OpenGL_Asset\glfw-3.2.1.bin.WIN32\lib-vc2015;D:\CPP_workspace\OpenGL_Asset\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\OpenGL\glfw-3.2.1.bin.WIN32\lib-vc2015;D:\OpenGL\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
