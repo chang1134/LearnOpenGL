@@ -4,8 +4,7 @@
 #include<GL\glew.h>
 #include<GLFW\glfw3.h>
 #include<cmath>
-#include "HelloWindow.h"
-void processInput(GLFWwindow* window);
+
 float vertices[] = {
 	-0.5f, -0.5f, 0.0f,
 	0.5f, -0.5f, 0.0f,
@@ -20,6 +19,7 @@ unsigned int indices[] =
 	0, 1, 2,
 	2, 1, 3
 };
+void processInput(GLFWwindow* window);
 
 const char* vertexShaderSource =
 "#version 330 core										 \n"
@@ -38,7 +38,7 @@ const char* fragmentShaderSource =
 "void main(){											  \n"
 "	FragColor = ourColor;}			  \n";
 
-int main() {
+int /*HelloTriangle_*/main() {
 
 	glfwInit();
 
