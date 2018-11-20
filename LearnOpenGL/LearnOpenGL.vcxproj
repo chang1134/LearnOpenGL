@@ -128,7 +128,16 @@
     <ClCompile Include="HelloTriangle.cpp" />
     <ClCompile Include="HelloWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shader_01.cpp" />
+    <ClCompile Include="Shader_02.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="fragmentSource.txt" />
+    <Text Include="vertexSource.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
