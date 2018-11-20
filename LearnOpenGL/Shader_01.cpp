@@ -1,4 +1,4 @@
-
+﻿
 #define GLEW_STATIC
 
 #include<GL\glew.h>
@@ -10,22 +10,25 @@ namespace Shader_01 {
 		-0.5f, -0.5f, 0.0f, 1, 0, 0,
 		0.5f,  -0.5f, 0.0f, 0, 1, 0,
 		0.0f,   0.5f, 0.0f, 0, 0, 1,
-		0.8f,  0.8f, 0.0f,  1, 1, 1
+		0.8f,   0.8f, 0.0f, 1, 0, 1,
+		0.8f,   0.0f, 0.0f, 1, 1, 0
 	};
 
 	unsigned int indices[] =
 	{
 		0, 1, 2,
-		2, 1, 3
+		2, 1, 3,
+		1, 4, 3
 	};
 
 	const char* vertexShaderSource =
 		"#version 330 core										 \n"
 		"layout(location = 0) in vec3 aPos;						 \n"
+		"layout(location = 1) in vec3 aColor;						 \n"
 		"out vec4 vertexColor;					  \n"
 		"void main(){											  \n"
 		"	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);	  \n"
-		"  	vertexColor = vec4(1.0, 1.0, 0, 1.0);  \n"
+		"  	vertexColor = vec4(aColor.x, aColor.y, aColor.z, 1.0);  \n"
 		"}	  \n";
 
 	const char* fragmentShaderSource =
@@ -34,7 +37,7 @@ namespace Shader_01 {
 		"uniform vec4 ourColor;									  \n"
 		"out vec4 FragColor;									  \n"
 		"void main(){											  \n"
-		"	FragColor = ourColor;}			  \n";
+		"	FragColor =  vertexColor;}			  \n";
 
 	int Start() {
 
@@ -57,11 +60,7 @@ namespace Shader_01 {
 			return -1;
 		}
 
-		glViewport(0, 0, 800, 600);
-		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		//CULL BACK
-		//glEnable(GL_CULL_FACE);
-		//glCullFace(GL_BACK);
+		glViewport(0, 0, 800, 600); 
 
 		unsigned int VAO;
 		glGenVertexArrays(1, &VAO);
@@ -93,8 +92,11 @@ namespace Shader_01 {
 		glAttachShader(shaderProgram, fragmentShader);
 		glLinkProgram(shaderProgram);
 
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
+
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+		glEnableVertexAttribArray(1);
 
 		while (!glfwWindowShouldClose(window))
 		{
@@ -115,8 +117,8 @@ namespace Shader_01 {
 
 			glUseProgram(shaderProgram);
 			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-			//glDrawArrays(GL_TRIANGLES, 0, 6);
+			int vertexCount = sizeof(indices) / sizeof(indices[0]); //顶点数量，三角形的个数 * 3
+			glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_INT, 0);
 
 			glfwSwapBuffers(window);
 			glfwPollEvents();

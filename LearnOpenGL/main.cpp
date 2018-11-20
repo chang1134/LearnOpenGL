@@ -1,4 +1,4 @@
-namespace HelloWindow { int Start(); }
+﻿namespace HelloWindow { int Start(); }
 namespace HelloTriangle { int Start(); }
 namespace Shader_01 { int Start(); }
 
