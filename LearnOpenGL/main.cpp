@@ -1,9 +1,13 @@
+
 #define GLEW_STATIC
 
 #include<GL\glew.h>
 #include<GLFW\glfw3.h>
- 
-int HelloWindow_main () {
+
+
+void processInput(GLFWwindow* window);
+
+int main() {
 
 	glfwInit();
 
@@ -25,16 +29,11 @@ int HelloWindow_main () {
 	}
 
 	glViewport(0, 0, 800, 600);
-
 	while (!glfwWindowShouldClose(window))
 	{
 		//Input Event
-		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-			glfwSetWindowShouldClose(window, true);
-		}
-		//Rendering Background
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		processInput(window);
+		//Rendering
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
@@ -44,3 +43,8 @@ int HelloWindow_main () {
 	return -1;
 }
 
+void processInput(GLFWwindow* window) {
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+		glfwSetWindowShouldClose(window, true);
+	}
+}
