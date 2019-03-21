@@ -19,13 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdTest.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
